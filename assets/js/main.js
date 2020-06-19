@@ -90,14 +90,11 @@ For example, calling factorial(4) should return a result of 24.
 
 function factorial(x) {
         let total = x
-    for (let counter = 0; counter < x; counter += 1) {
-        newTotal = multiply(total,(x-1))                     
-       /* newNewTotal = mulitply(newTotal,(total-1)) */                                    
+    for (let counter = 1; counter < x; counter += 1) {
+        total = multiply(total,counter)                                                       
                                                            
     }
-    return newTotal                                                         /* not sure to how 'shift' the current x or total down 
-                                                                                to the next number in sequence.... 5*4= 20 *3 = 60 *2 - 120 *1 = 120
-                                                                            */
+    return total                                                         
 }
 console.log('KATA04  ' + factorial(5))
 console.log('KATA04  ' + factorial(4))
@@ -117,11 +114,14 @@ So, the number in brackets is the 8th Fibonacci number.
 */
 
 function fibonacci(n) {
-/*        let total = 
-    for (let counter = 0; counter  n; counter += 1) {
-        total = 
+        let a = 0
+        let b = 1
+    for (let counter = 2; counter < n; counter += 1) {
+        let c = a+b
+        a = b
+        b = c
     }
-        return total */
+        return b
 }
-console.log('BONUS  ' + fibonacci(8))
+console.log('BONUS  ' + fibonacci(7))
 console.log('BONUS  ' + fibonacci(5))
